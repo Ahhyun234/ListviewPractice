@@ -2,6 +2,8 @@ package com.nepplus.listviewpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import com.nepplus.listviewpractice.adapters.StudentAdapter
 import com.nepplus.listviewpractice.datas.StudentData
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,5 +26,31 @@ class MainActivity : AppCompatActivity() {
 
         mStudent_adapter = StudentAdapter(this, R.layout.student_list_item,mStudentList)
         studentListView.adapter = mStudent_adapter
+//        리스트뷰의 각 줄이 눌린 이벤트를 처리
+        studentListView.setOnItemClickListener { adapterView, view, position, l ->
+
+//            position 몇번 줄이 눌렸는지 알려주는 역할
+            Log.d("리스트뷰","{$position}번 줄 클릭됨")
+
+
+//          눌린 위치에 맞는 학생 데이터 변수에 저장
+            
+            val clickedStudent = mStudentList[position]
+            
+//            ex.눌린 학생의 이름을 토스트로 출력
+            Toast.makeText(this, "${clickedStudent.name} 학생 클릭됨", Toast.LENGTH_SHORT).show()
+
+
+
+
+        }
+
+
+
+
+
+
+
+
     }
 }
