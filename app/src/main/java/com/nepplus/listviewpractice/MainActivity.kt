@@ -1,10 +1,12 @@
 package com.nepplus.listviewpractice
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.nepplus.listviewpractice.adapters.StudentAdapter
 import com.nepplus.listviewpractice.datas.StudentData
 import kotlinx.android.synthetic.main.activity_main.*
@@ -57,13 +59,30 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this, "${position}길게 눌렸다", Toast.LENGTH_SHORT).show()
 
+//            정말 그학생을 지울건지? 확인을 눌러야만 지우자
+
+            val alert = AlertDialog.Builder(this)
+            alert.setTitle("학생삭제 확인")
+            alert.setMessage("정말${longClickedStudent.name}학생을 제거하시겠습니까?")
+            alert.setPositiveButton("확인", DialogInterface.OnClickListener { dialogInterface, i ->
+
+//                확인이 눌렸을 때만 실행되는 코드
+
+
+
 //          롱클릭시 학생을 지우는 경우
-            mStudentList.remove(longClickedStudent)
+                mStudentList.remove(longClickedStudent)
 //      리스트뷰->  어댑터에게 새로고침 생기자
 
-            mStudent_adapter.notifyDataSetChanged()
+                mStudent_adapter.notifyDataSetChanged()
 
 
+
+            })
+
+
+            alert.setNegativeButton("취소",null)
+            alert.show()
 
             return@setOnItemLongClickListener true
 
@@ -75,4 +94,4 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-}
+} }
