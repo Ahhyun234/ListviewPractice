@@ -2,14 +2,14 @@ package com.nepplus.listviewpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.nepplus.listviewpractice.adapters.Student_adapter
+import com.nepplus.listviewpractice.adapters.StudentAdapter
 import com.nepplus.listviewpractice.datas.StudentData
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    val mStudentList = ArrayList<studentData>()
-    lateinit var mStudent_adapter: Student_adapter
+    val mStudentList = ArrayList<StudentData>()
+    lateinit var mStudent_adapter: StudentAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
