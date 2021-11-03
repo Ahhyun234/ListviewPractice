@@ -41,10 +41,17 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "${clickedStudent.name} 학생 클릭됨", Toast.LENGTH_SHORT).show()
 
 
-
-
         }
+//        true/false를 결과로 지정해줘야 함
+        
+        studentListView.setOnItemLongClickListener { adapterView, view, position, l ->  
+            
+            val longClickedStudent = mStudentList[position]
 
+            Toast.makeText(this, "${position}길게 눌렸다", Toast.LENGTH_SHORT).show()
+            
+            return@setOnItemLongClickListener true
+        }
 
 
 
