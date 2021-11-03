@@ -8,5 +8,6 @@ import com.nepplus.listviewpractice.datas.StudentData
 class Student_adapter(
     val mContext: Context,
     val resId: Int,
-    val mList: ArrayList<StudentData> ) : ArrayAdapter<StudentData>() {
+    val mList: ArrayList<StudentData> )
+    : ArrayAdapter<StudentData>(mContext, resId, mList) {
 }
