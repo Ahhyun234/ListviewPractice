@@ -38,9 +38,19 @@ class StudentAdapter(
 
         Log.d("학생이름",data.name)
 
+
         val txtname = row.findViewById<TextView>(R.id.txtName)
-        val txtname = row.findViewById<TextView>(R.id.txtAge)
-        val txtname = row.findViewById<TextView>(R.id.txtAddress)
+        val txtAge = row.findViewById<TextView>(R.id.txtAge)
+        val txtAddress = row.findViewById<TextView>(R.id.txtAddress)
+
+        txtname.text = data.name
+        txtAge.text = data.birthYear.toString()
+        txtAddress.text = data.address
+
+//        학생 데이터의 출생년도> 나이로 바꿔서 (나이)로 가공해서 출력
+
+        val age = 2021-data.birthYear +1
+        txtAge.text ="(${age}세)"
 
         return row
     }
