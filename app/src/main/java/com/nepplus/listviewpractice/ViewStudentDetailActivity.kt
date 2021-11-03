@@ -20,6 +20,8 @@ class ViewStudentDetailActivity : AppCompatActivity() {
 
         val birthYear = intent.getIntExtra("birthYear")
         txtAge.text=birthYear
+//        만약 다른 템플릿의 변수를 선택했다면 상단 Import에서 선택된 다른 템플릿 줄을 삭제
+
 
     }
 }
