@@ -51,9 +51,10 @@ class MainActivity : AppCompatActivity() {
 
 //            상세 보기 화면으로 이동 ******
             val myIntent = Intent(this, ViewStudentDetailActivity::class.java)
-            myIntent.putExtra("name",clickedStudent.name)
-            myIntent.putExtra("birthYear",clickedStudent.birthYear)
-            myIntent.putExtra("address",clickedStudent.address)
+//            myIntent.putExtra("name",clickedStudent.name)
+//            myIntent.putExtra("birthYear",clickedStudent.birthYear)
+//            myIntent.putExtra("address",clickedStudent.address)
+         myIntent.putExtra(student,clickedStudent)
             startActivity((myIntent))
 
         }
