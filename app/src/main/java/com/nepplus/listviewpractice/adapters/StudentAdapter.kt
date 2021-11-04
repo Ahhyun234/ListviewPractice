@@ -49,8 +49,12 @@ class StudentAdapter(
 
 //        학생 데이터의 출생년도> 나이로 바꿔서 (나이)로 가공해서 출력
 
-        val age = 2021-data.birthYear +1
-        txtAge.text ="(${age}세)"
+//        val age = 2021-data.birthYear +1
+//        txtAge.text ="(${age}세)"
+//      stydentData폴더에서 만든 함수를 이용해보자
+
+        txtAge.text= "${data.getAge(2021)}세"
+
 
         return row
     }
